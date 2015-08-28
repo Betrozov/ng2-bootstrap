@@ -6,14 +6,14 @@ The body of each accordion group is transcluded in to the body of the collapsibl
 
 ### Accordion Settings ###
 
-  * `is-open` <i class="glyphicon glyphicon-eye-open"></i> (Defaults: false) :
+  * `is-open` (Defaults: false) :
     Whether accordion group is open or closed.
-  * `template-url` (Defaults: `template/accordion/accordion.html`) :
+  * `template-url` (Defaults: `components/accordion/accordion.html`) :
     Add ability to override the template url used
 
 ### Accordion Group Settings ###
 
   * `panel-class` (Defaults: `panel-default`) :
-    Add ability to use Bootstrap's contextual panel classes (panel-primary, panel-success, panel-info, etc...) or your own.  This must be a string.
-  * `template-url` (Defaults: `template/accordion/accordion-group.html`) :
+    Add ability to use Bootstrap's contextual panel classes (panel-primary, panel-success, panel-info, etc...) or your own. This must be a string.
+  * `template-url` (Defaults: `components/accordion/accordion-group.html`) :
     Add ability to override the template url used. Note that this must be a string
