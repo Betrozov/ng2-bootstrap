@@ -56,6 +56,9 @@ var config = {
   },
   module: {
     loaders: [
+      // support markdown
+      {test: /\.md$/, loader: 'html!markdown'},
+
       // Support for *.json files.
       {test: /\.json$/, loader: 'json'},
 
@@ -102,7 +105,7 @@ var config = {
     }
 
     this.plugins.push.apply(this.plugins, [
-       //production only
+      //production only
       new webpack.optimize.UglifyJsPlugin({
         compress: {
           warnings: false,

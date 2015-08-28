@@ -13,7 +13,8 @@
   "main": "dist/index.js",
   "typescript": {
     "definition": [
-      "dist/module.d.ts", "typings/es6-object.d.ts"
+      "dist/module.d.ts",
+      "typings/es6-object.d.ts"
     ]
   },
   "files": [
@@ -57,6 +58,8 @@
     "gulp-size": "^2.0.0",
     "gulp-tsc": "^1.1.1",
     "gulp-tslint": "^3.1.2",
+    "html-loader": "^0.3.0",
+    "markdown-loader": "^0.1.6",
     "moment": "^2.10.6",
     "pre-commit": "^1.1.1",
     "require-dir": "^0.3.0",
