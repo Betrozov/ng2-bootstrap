@@ -95,8 +95,11 @@ import {TooltipDemo} from './components/tooltip-demo';
   </main>
 
   <div class="container">
-    <accordion-demo class="col-md-12"></accordion-demo>
     <alert-demo class="col-md-12"></alert-demo>
+  </div>
+  <div class="container" hidden>
+    <accordion-demo class="col-md-12"></accordion-demo>
+
     <buttons-demo class="col-md-12"></buttons-demo>
     <carousel-demo class="col-md-12"></carousel-demo>
     <collapse-demo class="col-md-12"></collapse-demo>
