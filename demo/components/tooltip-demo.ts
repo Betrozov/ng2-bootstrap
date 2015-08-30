@@ -6,69 +6,84 @@ import {Component, View, bootstrap,
 
 import {tooltip} from '../../components/index';
 
+let template = `
+  <div class="form-group">
+    <label>Dynamic Tooltip Text</label>
+    <input type="text" [(ng-model)]="dynamicTooltipText" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Dynamic Tooltip Popup Text</label>
+    <input type="text" [(ng-model)]="dynamicTooltip" class="form-control">
+  </div>
+  <p>
+    Pellentesque <a href="#" [tooltip]="dynamicTooltip">{{dynamicTooltipText}}</a>,
+    sit amet venenatis urna cursus eget nunc scelerisque viverra mauris, in
+    aliquam. Tincidunt lobortis feugiat vivamus at
+    <a href="#" tooltip-placement="left" tooltip="On the Left!">left</a> eget
+    arcu dictum varius duis at consectetur lorem. Vitae elementum curabitur
+    <a href="#" tooltip-placement="right" tooltip="On the Right!">right</a>
+    nunc sed velit dignissim sodales ut eu sem integer vitae. Turpis egestas
+    <a href="#" tooltip-placement="bottom" tooltip="On the Bottom!">bottom</a>
+    pharetra convallis posuere morbi leo urna,
+    <a href="#" tooltip-animation="false" tooltip="I don't fade. :-(">fading</a>
+    at elementum eu, facilisis sed odio morbi quis commodo odio. In cursus
+    <a href="#" tooltip-popup-delay='1000' tooltip='appears with delay'>delayed</a> turpis massa tincidunt dui ut.
+    <a href="#" tooltip-template="'myTooltipTemplate.html'">Custom template</a>
+    nunc sed velit dignissim sodales ut eu sem integer vitae. Turpis egestas
+  </p>
+
+  <p>
+      I can even contain HTML. <a href="#" tooltip-html="htmlTooltip">Check me out!</a>
+  </p>
+
+  <p>
+
+      I can have a custom class. <a href="#" tooltip="I can have a custom class applied to me!" tooltip-class="customClass">Check me out!</a>
+  </p>
+
+  <form role="form">
+    <div class="form-group">
+      <label>Or use custom triggers, like focus: </label>
+      <input type="text" value="Click me!" tooltip="See? Now click away..."  tooltip-trigger="focus" tooltip-placement="right" class="form-control" />
+    </div>
+
+    <div class="form-group" ng-class="{'has-error' : !inputModel}">
+      <label>Disable tooltips conditionally:</label>
+      <input type="text" ng-model="inputModel" class="form-control"
+        placeholder="Hover over this for a tooltip until this is filled"
+        tooltip="Enter something in this input field to disable this tooltip"
+        tooltip-placement="top"
+        tooltip-trigger="mouseenter"
+        tooltip-enable="!inputModel" />
+    </div>
+  </form>
+
+  <script type="text/ng-template" id="myTooltipTemplate.html">
+    <span>Special Tooltip with <strong>markup</strong> and {{ dynamicTooltipText }}</span>
+  </script>`;
+
+// webpack html imports
+let doc = require('../../components/tooltip/readme.md');
+
 @Component({
   selector: 'tooltip-demo'
 })
 @View({
   template: `
-    <br><hr/>
-    <h2>Tooltip demo</h2>
-    <div>
-      <div class="form-group">
-        <label>Dynamic Tooltip Text</label>
-        <input type="text" [(ng-model)]="dynamicTooltipText" class="form-control">
+  <section id="tooltip">
+    <div class="page-header">
+      <h1>
+        Tooltip
+        <small>(<a href="https://github.com/valor-software/ng2-bootstrap/blob/master/components/tooltip/tooltip.ts">src</a>)</small>
+      </h1>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        ${template}
       </div>
-      <div class="form-group">
-        <label>Dynamic Tooltip Popup Text</label>
-        <input type="text" [(ng-model)]="dynamicTooltip" class="form-control">
-      </div>
-      <p>
-        Pellentesque <a href="#" [tooltip]="dynamicTooltip">{{dynamicTooltipText}}</a>,
-        sit amet venenatis urna cursus eget nunc scelerisque viverra mauris, in
-        aliquam. Tincidunt lobortis feugiat vivamus at
-        <a href="#" tooltip-placement="left" tooltip="On the Left!">left</a> eget
-        arcu dictum varius duis at consectetur lorem. Vitae elementum curabitur
-        <a href="#" tooltip-placement="right" tooltip="On the Right!">right</a>
-        nunc sed velit dignissim sodales ut eu sem integer vitae. Turpis egestas
-        <a href="#" tooltip-placement="bottom" tooltip="On the Bottom!">bottom</a>
-        pharetra convallis posuere morbi leo urna,
-        <a href="#" tooltip-animation="false" tooltip="I don't fade. :-(">fading</a>
-        at elementum eu, facilisis sed odio morbi quis commodo odio. In cursus
-        <a href="#" tooltip-popup-delay='1000' tooltip='appears with delay'>delayed</a> turpis massa tincidunt dui ut.
-        <a href="#" tooltip-template="'myTooltipTemplate.html'">Custom template</a>
-        nunc sed velit dignissim sodales ut eu sem integer vitae. Turpis egestas
-      </p>
-
-      <p>
-          I can even contain HTML. <a href="#" tooltip-html="htmlTooltip">Check me out!</a>
-      </p>
-
-      <p>
-
-          I can have a custom class. <a href="#" tooltip="I can have a custom class applied to me!" tooltip-class="customClass">Check me out!</a>
-      </p>
-
-      <form role="form">
-        <div class="form-group">
-          <label>Or use custom triggers, like focus: </label>
-          <input type="text" value="Click me!" tooltip="See? Now click away..."  tooltip-trigger="focus" tooltip-placement="right" class="form-control" />
-        </div>
-
-        <div class="form-group" ng-class="{'has-error' : !inputModel}">
-          <label>Disable tooltips conditionally:</label>
-          <input type="text" ng-model="inputModel" class="form-control"
-            placeholder="Hover over this for a tooltip until this is filled"
-            tooltip="Enter something in this input field to disable this tooltip"
-            tooltip-placement="top"
-            tooltip-trigger="mouseenter"
-            tooltip-enable="!inputModel" />
-        </div>
-      </form>
-
-      <script type="text/ng-template" id="myTooltipTemplate.html">
-        <span>Special Tooltip with <strong>markup</strong> and {{ dynamicTooltipText }}</span>
-      </script>
-  </div>`,
+      <div class="col-md-6">${doc}</div>
+    </div>
+  </section>`,
   directives: [tooltip, CORE_DIRECTIVES, FORM_DIRECTIVES, NgClass],
   style: `
     /* Specify styling for tooltip contents */

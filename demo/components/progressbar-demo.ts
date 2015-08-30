@@ -5,6 +5,9 @@ import {Component, View, bootstrap, CORE_DIRECTIVES, NgStyle} from 'angular2/ang
 import {progressbar} from '../../components/index';
 import {Ng2BootstrapConfig, Theme} from '../../components/ng2-bootstrap-config';
 
+// webpack html imports
+let doc = require('../../components/progressbar/readme.md');
+
 let templates = {
   [Theme.BS3]: `
     <div>
@@ -83,10 +86,20 @@ let templates = {
 })
 @View({
   template: `
-    <br><hr/>
-    <h2>Progressbar demo</h2>
-    ${templates[Ng2BootstrapConfig.theme]}
-  `,
+  <section id="progressbar">
+    <div class="page-header">
+      <h1>
+        Progressbar
+        <small>(<a href="https://github.com/valor-software/ng2-bootstrap/blob/master/components/progressbar/progressbar.ts">src</a>)</small>
+      </h1>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        ${templates[Ng2BootstrapConfig.theme]}
+      </div>
+      <div class="col-md-6">${doc}</div>
+    </div>
+  </section>`,
   directives: [progressbar, CORE_DIRECTIVES, NgStyle]
 })
 export class ProgressbarDemo {

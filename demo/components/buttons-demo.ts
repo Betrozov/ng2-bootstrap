@@ -6,13 +6,7 @@ import {CORE_DIRECTIVES, FORM_DIRECTIVES} from 'angular2/angular2';
 
 import {ButtonCheckbox, ButtonRadio} from '../../components/index';
 
-@Component({
-  selector: 'buttons-demo'
-})
-@View({
-  template: `
-    <br><hr/>
-    <h2>Buttons</h2>
+let template = `
     <h4>Single toggle</h4>
     <pre class="card card-block card-header">{{singleModel}}</pre>
     <button type="button" class="btn btn-primary" [(ng-model)]="singleModel" btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0">
@@ -38,7 +32,30 @@ import {ButtonCheckbox, ButtonRadio} from '../../components/index';
         <label class="btn btn-success" [(ng-model)]="radioModel" btn-radio="Middle" uncheckable>Middle</label>
         <label class="btn btn-success" [(ng-model)]="radioModel" btn-radio="Right"  uncheckable>Right</label>
     </div>
-</div>
+`;
+
+// webpack html imports
+let doc = require('../../components/buttons/readme.md');
+
+@Component({
+  selector: 'buttons-demo'
+})
+@View({
+  template: `
+  <section id="buttons">
+    <div class="page-header">
+      <h1>
+        Buttons
+        <small>(<a href="https://github.com/valor-software/ng2-bootstrap/blob/master/components/buttons/">src</a>)</small>
+      </h1>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        ${template}
+      </div>
+      <div class="col-md-6">${doc}</div>
+    </div>
+  </section>
   `,
   directives: [
     CORE_DIRECTIVES, FORM_DIRECTIVES,

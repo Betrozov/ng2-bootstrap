@@ -1,9 +1,8 @@
-export enum Theme {BS3 = 'bs3', BS4 = 'bs4'}
+export enum Theme {BS3, BS4}
 
-interface Window {
+export interface Window {
   __theme: string;
 }
-
 
 export class Ng2BootstrapConfig {
   private static _theme: Theme;

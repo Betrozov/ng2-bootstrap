@@ -3,15 +3,8 @@
 import {Component, View, bootstrap, CORE_DIRECTIVES} from 'angular2/angular2';
 
 import {dropdown} from '../../components/index';
-import {Ng2BootstrapConfig} from '../../components/ng2-bootstrap-config';
 
-@Component({
-  selector: 'dropdown-demo'
-})
-@View({
-  template: `
-    <br><hr/>
-    <h2>Dropdown</h2>
+let template = `
     <div (^click)="$event.preventDefault()">
         <!-- Simple dropdown -->
         <span dropdown (on-toggle)="toggled($event)">
@@ -109,7 +102,30 @@ import {Ng2BootstrapConfig} from '../../components/ng2-bootstrap-config';
             </ul>
         </script>
     </div>
-  `,
+  `;
+
+// webpack html imports
+let doc = require('../../components/dropdown/readme.md');
+
+@Component({
+  selector: 'dropdown-demo'
+})
+@View({
+  template: `
+  <section id="dropdown">
+    <div class="page-header">
+      <h1>
+        Dropdown
+        <small>(<a href="https://github.com/valor-software/ng2-bootstrap/blob/master/components/dropdown/dropdown.ts">src</a>)</small>
+      </h1>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        ${template}
+      </div>
+      <div class="col-md-6">${doc}</div>
+    </div>
+  </section>`,
   directives: [dropdown, CORE_DIRECTIVES]
 })
 export class DropdownDemo {

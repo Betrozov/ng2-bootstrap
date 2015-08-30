@@ -4,6 +4,11 @@ import {Component, View, bootstrap, CORE_DIRECTIVES} from 'angular2/angular2';
 
 import {Alert} from '../../components/index';
 
+let template = `<span *ng-if="name">Hello, {{name}}!</span>
+        <alert dismiss-on-timeout="3000">This alert will dismiss in 3s</alert>
+        <alert *ng-for="#alert of alerts;#i = index" [type]="alert.type" (close)="closeAlert(i)">{{ alert.msg }}</alert>
+        <div></div>
+        <button type="button" class='btn btn-primary' (click)="addAlert()">Add Alert</button>`;
 // webpack html imports
 let doc = require('../../components/alert/readme.md');
 
@@ -21,11 +26,7 @@ let doc = require('../../components/alert/readme.md');
     </div>
     <div class="row">
       <div class="col-md-6">
-        <span *ng-if="name">Hello, {{name}}!</span>
-        <alert dismiss-on-timeout="3000">This alert will dismiss in 3s</alert>
-        <alert *ng-for="#alert of alerts;#i = index" [type]="alert.type" (close)="closeAlert(i)">{{ alert.msg }}</alert>
-        <div></div>
-        <button type="button" class='btn btn-primary' (click)="addAlert()">Add Alert</button>
+        ${template}
       </div>
       <div class="col-md-6">${doc}</div>
     </div>

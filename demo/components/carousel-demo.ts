@@ -4,15 +4,8 @@ import {Component, View, NgFor, bootstrap, CORE_DIRECTIVES, FORM_DIRECTIVES} fro
 
 import {carousel} from '../../components/index';
 
-@Component({
-  selector: 'carousel-demo'
-})
-@View({
-  template: `
-<br><hr/>
-<h2>Carousel demo</h2>
+let template = `
 <div class="row">
-<div class="col-md-6 show-grid">
   <div>
     <carousel [interval]="myInterval" [no-wrap]="noWrapSlides">
       <slide *ng-for="#slidez of slides; #index=index" [active]="slidez.active">
@@ -42,8 +35,30 @@ import {carousel} from '../../components/index';
     </div>
   </div>
 </div>
-</div>
-  `,
+`;
+
+// webpack html imports
+let doc = require('../../components/carousel/readme.md');
+
+@Component({
+  selector: 'carousel-demo'
+})
+@View({
+  template:  `
+  <section id="carousel">
+    <div class="page-header">
+      <h1>
+        Carousel
+        <small>(<a href="https://github.com/valor-software/ng2-bootstrap/blob/master/components/carousel/carousel.ts">src</a>)</small>
+      </h1>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        ${template}
+      </div>
+      <div class="col-md-6">${doc}</div>
+    </div>
+  </section>`,
   directives: [carousel, CORE_DIRECTIVES, FORM_DIRECTIVES]
 })
 export class CarouselDemo {
