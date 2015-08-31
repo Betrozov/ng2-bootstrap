@@ -3,13 +3,13 @@
 import {Component, View, bootstrap, CORE_DIRECTIVES, NgStyle} from 'angular2/angular2';
 
 import {progressbar} from '../../components/index';
-import {Ng2BootstrapConfig, Theme} from '../../components/ng2-bootstrap-config';
+import {Ng2BootstrapConfig, Ng2BootstrapTheme} from '../../components/ng2-bootstrap-config';
 
 // webpack html imports
 let doc = require('../../components/progressbar/readme.md');
 
 let templates = {
-  [Theme.BS3]: `
+  [Ng2BootstrapTheme.BS3]: `
     <div>
       <h3>Static</h3>
       <div class="row">
@@ -36,7 +36,7 @@ let templates = {
         </bar>
       </bs-progress>
     </div>`,
-  [Theme.BS4]: `
+  [Ng2BootstrapTheme.BS4]: `
     <h3>In bootstrap 4 progress has a different concept, no inner text, no default transition animation</h3>
     <h3>Static</h3>
     <div class="row">

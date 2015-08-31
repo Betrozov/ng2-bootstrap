@@ -1,0 +1,44 @@
+/**
+    * VH and VW units can cause issues on iOS devices: http://caniuse.com/#feat=viewport-units
+    *
+    * To overcome this, create media queries that target the width, height, and orientation of iOS devices.
+    * It isn't optimal, but there is really no other way to solve the problem. In this example, I am fixing
+    * the height of element '.scrollable-menu' —which is a full width and height cover image.
+    *
+    * iOS Resolution Quick Reference: http://www.iosres.com/
+    */
+
+.scrollable-menu {
+  height: 90vh !important;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+
+/**
+ * iPad with portrait orientation.
+ */
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait){
+  .scrollable-menu {
+    height: 1024px !important;
+  }
+}
+
+/**
+ * iPad with landscape orientation.
+ */
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:landscape){
+  .scrollable-menu {
+    height: 768px !important;
+  }
+}
+
+/**
+ * iPhone 5
+ * You can also target devices with aspect ratio.
+ */
+@media screen and (device-aspect-ratio: 40/71) {
+  .scrollable-menu {
+    height: 500px !important;
+  }
+}

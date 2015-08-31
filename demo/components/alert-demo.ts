@@ -11,6 +11,8 @@ let template = `
   <div></div>
   <button type="button" class='btn btn-primary' (click)="addAlert()">Add Alert</button>`;
 
+let name = 'Alerts';
+let src = 'https://github.com/valor-software/ng2-bootstrap/blob/master/components/alert/alert.ts';
 // webpack html imports
 let doc = require('../../components/alert/readme.md');
 let titleDoc = require('../../components/alert/title.md');
@@ -20,25 +22,11 @@ let titleDoc = require('../../components/alert/title.md');
 })
 @View({
   template: `
-  <section id="alert">
-    <div class="page-header">
-      <h1>
-        Alerts
-        <small>(<a href="https://github.com/valor-software/ng2-bootstrap/blob/master/components/alert/alert.ts">src</a>)</small>
-      </h1>
-    </div>
-    <div class="row">
-      <div class="col-md-10">
-          ${titleDoc}
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6">
-        <h1>Examples</h1>
-        ${template}
-      </div>
-      <div class="col-md-6">${doc}</div>
-    </div>
+  <section id="${name.toLowerCase()}">
+    <div class="page-header"><h1>${name}<small>(<a href="${src}">src</a>)</small></h1></div>
+    <div class="row"><div class="col-md-10">${titleDoc}</div></div>
+    <div class="row"><div class="col-md-12"><h2>Examples</h2>${template}</div></div>
+    <div class="row"><div class="col-md-12">${doc}</div></div>
   </section>
   `,
   directives: [Alert, CORE_DIRECTIVES]

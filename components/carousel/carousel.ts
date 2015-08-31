@@ -81,7 +81,7 @@ export class Carousel {
     this.restartTimer();
   }
 
-  public select(nextSlide:Slide, direction?:Direction = Direction.UNKNOWN) {
+  public select(nextSlide:Slide, direction:Direction = Direction.UNKNOWN) {
     let nextIndex = nextSlide.index;
     if (direction === Direction.UNKNOWN) {
       direction = nextIndex > this.getCurrentIndex() ? Direction.NEXT : Direction.PREV;

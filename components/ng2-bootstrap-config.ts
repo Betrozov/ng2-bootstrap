@@ -1,15 +1,11 @@
-export enum Theme {BS3, BS4}
-
-export interface Window {
-  __theme: string;
-}
+export enum Ng2BootstrapTheme {BS3, BS4}
 
 export class Ng2BootstrapConfig {
-  private static _theme: Theme;
-  static get theme():Theme {
-    return this._theme || window.__theme === 'bs4' ? Theme.BS4 : Theme.BS3;
+  private static _theme: Ng2BootstrapTheme;
+  static get theme():Ng2BootstrapTheme {
+    return this._theme || Ng2BootstrapTheme.BS3;
   }
-  static set theme(v:Theme){
+  static set theme(v:Ng2BootstrapTheme){
     this._theme = v;
   }
 }
