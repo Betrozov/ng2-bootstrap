@@ -1,3 +1,5 @@
+## Selector: `alert, [alert]`
+
 ## Properties
 - `type` (`?:string='warning'`) - provide one of the four supported, contextual classes:
 `success`,`info`, `warning` - default, `danger`

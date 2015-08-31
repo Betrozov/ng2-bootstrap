@@ -17,11 +17,15 @@ import {TabsDemo} from './components/tabs-demo';
 import {TimepickerDemo} from './components/timepicker-demo';
 import {TooltipDemo} from './components/tooltip-demo';
 
+//require('expose?hljs!./assets/highlight/highlight.pack.js');
+//require('./assets/highlight/styles/darkula.css');
+let test = require('./index.html');
 @Component({
   selector: 'app'
 })
 @View({
   template: `
+
   <header class="navbar navbar-default navbar-fixed-top navbar-inner">
     <div class="container">
       <div class="navbar-header">
@@ -111,7 +115,9 @@ import {TooltipDemo} from './components/tooltip-demo';
     <timepicker-demo class="col-md-12"></timepicker-demo>
     <tooltip-demo class="col-md-12"></tooltip-demo>
   </div>
-
+<pre><code class="html">
+  ${test}
+</code></pre>
   <footer class="footer">
     <div class="container">
       <p class="text-muted text-center"><a href="https://github.com/valor-software/ng2-bootstrap">ng2-bootstrap</a> is maintained by <a href="https://github.com/valor-software">valor-software</a>.</p>
