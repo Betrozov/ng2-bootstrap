@@ -9,7 +9,7 @@
     */
 
 .scrollable-menu {
-  height: 90vh !important;
+  height: 100vh !important;
   width: 100vw;
   overflow-x: hidden;
 }
@@ -41,4 +41,23 @@
   .scrollable-menu {
     height: 500px !important;
   }
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #888;
+}
+
+.navbar-toggle:focus {
+  outline: 0
+}
+
+.navbar-toggle .icon-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 1px
+}
+
+.navbar-toggle .icon-bar+.icon-bar {
+  margin-top: 4px
 }
