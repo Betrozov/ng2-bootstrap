@@ -3,7 +3,7 @@ import {Component, View, bootstrap} from 'angular2/angular2';
 
 import {Ng2BootstrapConfig, Ng2BootstrapTheme} from '../components/index';
 
-let w: any = window;
+let w:any = window;
 if (w && w.__theme === 'bs4') {
   Ng2BootstrapConfig.theme = Ng2BootstrapTheme.BS4;
 }
@@ -43,13 +43,14 @@ import {DemoHeader} from './components/demo-header';
   </main>
 
   <div class="container">
-    <h1>Available with:</h1>
-    <a class="btn-outline-inverse btn-lg" href="/">Bootstrap 3</a>
-    <a class="btn-outline-inverse btn-lg" href="./index-bs4.html">Bootstrap 4</a>
+    <div class="col-md-12">
+      <selection>
+        <h1>Available with:</h1>
+        <a class="btn btn-default btn-secondary btn-lg" href="/">Bootstrap 3</a>
+        <a class="btn btn-default btn-secondary btn-lg" href="./index-bs4.html">Bootstrap 4</a>
+      </selection>
+    </div>
     <alert-demo class="col-md-12"></alert-demo>
-  </div>
-
-  <div class="container" >
     <accordion-demo class="col-md-12"></accordion-demo>
     <buttons-demo class="col-md-12"></buttons-demo>
     <carousel-demo class="col-md-12"></carousel-demo>
