@@ -35,6 +35,10 @@ import {DemoHeader} from './components/demo-header';
       <h1>ng2-bootstrap</h1>
       <p>Native Angular2 directives for Bootstrap</p>
       <a class="btn btn-primary" href="https://github.com/valor-software/ng2-bootstrap">View on GitHub</a>
+      <div class="row">
+        <div class="col-lg-2"><iframe src="https://ghbtns.com/github-btn.html?user=valor-software&repo=ng2-bootstrap&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe></div>
+        <div class="col-lg-2"><iframe src="https://ghbtns.com/github-btn.html?user=valor-software&repo=ng2-bootstrap&type=fork&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe></div>
+      </div>
     </div>
   </main>
 
