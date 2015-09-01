@@ -61,3 +61,71 @@
 .navbar-toggle .icon-bar+.icon-bar {
   margin-top: 4px
 }
+
+/*!
+ * Bootstrap Docs (http://getbootstrap.com)
+ * Copyright 2011-2014 Twitter, Inc.
+ * Licensed under the Creative Commons Attribution 3.0 Unported License. For
+ * details, see http://creativecommons.org/licenses/by/3.0/.
+ */
+
+.bd-pageheader {
+  padding: 2rem .9375rem;
+  margin-top: 50px;
+  margin-bottom: 1.5rem;
+  color: #cdbfe3;
+  text-align: center;
+  background-color: #563d7c
+}
+
+.bd-pageheader h1 {
+  font-size: 3rem;
+  font-weight: 400;
+  color: #fff
+}
+
+.bd-pageheader p {
+  margin-bottom: 0;
+  font-size: 1.25rem;
+  font-weight: 300
+}
+
+@media (min-width: 34em) {
+  .bd-pageheader {
+    padding-top:4rem;
+    padding-bottom: 4rem;
+    margin-bottom: 3rem;
+    text-align: left
+  }
+
+  .bd-pageheader .carbonad {
+    margin: 2rem 0 0!important
+  }
+}
+
+@media (min-width: 62em) {
+  .bd-pageheader h1,.bd-pageheader p {
+    margin-right:380px
+  }
+
+  .bd-pageheader .carbonad {
+    position: absolute;
+    top: 0;
+    right: .75rem;
+    margin: 0!important
+  }
+}
+
+@media (min-width: 48em) {
+  .bd-pageheader h1 {
+    font-size:4rem
+  }
+
+  .bd-pageheader p {
+    font-size: 1.5rem
+  }
+
+  .bd-sidebar {
+    padding-left: 1rem
+  }
+}

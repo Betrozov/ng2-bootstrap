@@ -3,7 +3,8 @@ import {Component, View, bootstrap} from 'angular2/angular2';
 
 import {Ng2BootstrapConfig, Ng2BootstrapTheme} from '../components/index';
 
-if (window && window['__theme'] === 'bs4') {
+let w: any = window;
+if (w && w.__theme === 'bs4') {
   Ng2BootstrapConfig.theme = Ng2BootstrapTheme.BS4;
 }
 
@@ -29,20 +30,22 @@ import {DemoHeader} from './components/demo-header';
   template: `
   <demo-header>Loading header</demo-header>
 
-  <main class="text-center header">
-    <h2 class="project-tagline">Native Angular2 directives for Bootstrap</h2>
-    <a class="btn btn-primary btn-lg" href="https://github.com/valor-software/ng2-bootstrap">View on GitHub</a>
-
+  <main class="bd-pageheader">
+    <div class="container">
+      <h1>ng2-bootstrap</h1>
+      <p>Native Angular2 directives for Bootstrap</p>
+      <a class="btn btn-primary" href="https://github.com/valor-software/ng2-bootstrap">View on GitHub</a>
+    </div>
   </main>
 
   <div class="container">
     <h1>Available with:</h1>
-    <a class="btn btn-primary btn-lg" href="/">Bootstrap 3</a>
-    <a class="btn btn-primary btn-lg" href="./index-bs4.html">Bootstrap 4</a>
+    <a class="btn-outline-inverse btn-lg" href="/">Bootstrap 3</a>
+    <a class="btn-outline-inverse btn-lg" href="./index-bs4.html">Bootstrap 4</a>
     <alert-demo class="col-md-12"></alert-demo>
   </div>
 
-  <div class="container" hidden>
+  <div class="container" >
     <accordion-demo class="col-md-12"></accordion-demo>
     <buttons-demo class="col-md-12"></buttons-demo>
     <carousel-demo class="col-md-12"></carousel-demo>
