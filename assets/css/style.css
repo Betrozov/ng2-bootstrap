@@ -254,6 +254,7 @@ body {
   margin: 14px 0;
   font-family: 'Source Code Pro';
   border-left: 1px solid transparent;
+  list-style: none;
 }
 
 #main-menu .section .item li.active,
@@ -389,6 +390,14 @@ body {
   margin-bottom: 10px;
 }
 
+#content .list-container ul {
+  padding: 0;
+}
+
+#content .list-container ul li {
+  list-style: none;
+}
+
 #content .list-container ul li:before {
   content: '•';
   display: inline-block;
@@ -468,7 +477,7 @@ body {
   background-color: #20202f;
 }
 
-#content .item h4 {
+#content .item > h4 {
   font-size: 22px;
   margin: 20px 0 15px;
 }
