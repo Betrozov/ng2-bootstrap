@@ -213,11 +213,13 @@ body {
   color: #fff;
   text-transform: uppercase;
   margin: 15px 0;
+  cursor: pointer;
 }
 
 #main-menu .section .item {
   margin-bottom: 13px;
   margin-left: 15px;
+  display: none;
 }
 
 #main-menu .section h4 {
