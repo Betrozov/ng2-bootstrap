@@ -41,7 +41,7 @@ webpackJsonp([1],[
 	    return Demo;
 	}());
 	exports.Demo = Demo;
-	browser_1.bootstrap(Demo, [router_1.ROUTER_PROVIDERS, core_1.provide(router_1.APP_BASE_HREF, { useValue: '/' })]);
+	browser_1.bootstrap(Demo, [router_1.ROUTER_PROVIDERS, core_1.provide(router_1.LocationStrategy, { useClass: router_1.HashLocationStrategy })]);
 
 
 /***/ },
